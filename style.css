@@ -1,0 +1,249 @@
+/* RESET DE ESTILOS RESIDUAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --bg-color: #D3E0DC;        /* Cor de fundo acinzentada da tela */
+    --dark-green: #07482B;      /* Verde escuro principal */
+    --lime-green: #A3FF66;      /* Verde limão vibrante do texto */
+    --bright-lime: #B4FF4D;    /* Fundo do card da direita */
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+body {
+    background-color: var(--bg-color);
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    padding: 8px 12px;
+    border-radius: 100px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #555;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.nav-item.active, .nav-item:hover {
+    background-color: #F0F2F1;
+    color: var(--black);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--black);
+}
+
+.btn-cta-header {
+    background-color: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* HERO SECTION */
+.hero-section {
+    background-color: var(--dark-green);
+    border-radius: 24px;
+    padding: 60px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.hero-left {
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.hero-subtitle {
+    color: #A3CBB8;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-white {
+    background-color: var(--white);
+    color: var(--black);
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-weight: 500;
+}
+
+.btn-link {
+    color: var(--lime-green);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.hero-right {
+    max-width: 55%;
+}
+
+.hero-title {
+    color: var(--lime-green);
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+/* BOTTOM GRID */
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 16px;
+}
+
+.card-image {
+    border-radius: 24px;
+    overflow: hidden;
+    height: 450px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-dashboard {
+    background-color: var(--bright-lime);
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    position: relative;
+    height: 450px;
+}
+
+/* SIMULAÇÃO DO MOCKUP */
+.dashboard-mockup {
+    background-color: #EBF1EE;
+    width: 100%;
+    height: 90%;
+    border-radius: 20px 20px 0 0;
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    right: 0;
+    padding: 24px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+}
+
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #D5DDD9;
+    padding-bottom: 12px;
+}
+
+.dash-logo { font-weight: 600; font-size: 14px; }
+
+.dash-menu {
+    display: flex;
+    gap: 12px;
+    font-size: 11px;
+    background: #000;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: #fff;
+}
+.dash-menu span.active { color: var(--lime-green); }
+
+.dash-welcome {
+    margin: 20px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.dash-widgets {
+    display: flex;
+    gap: 16px;
+}
+
+.widget-weather, .widget-resources {
+    background: white;
+    padding: 16px;
+    border-radius: 16px;
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.widget-weather h4, .widget-resources h4 {
+    margin-bottom: 8px;
+    color: #666;
+}
+
+/* RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS */
+@media (max-width: 992px) {
+    .hero-section {
+        flex-direction: column-reverse;
+        padding: 40px 24px;
+    }
+    .hero-left, .hero-right {
+        max-width: 100%;
+    }
+    .hero-title {
+        font-size: 38px;
+    }
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+    .card-dashboard {
+        height: 350px;
+    }
+    .dashboard-mockup {
+        left: 20px;
+    }
+}
